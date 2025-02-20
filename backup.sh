@@ -24,3 +24,10 @@ for file in "${dotfiles[@]}"; do
     echo "Warning: $file not found"
   fi
 done
+
+# Git operations
+git add .
+git commit -m "Updated dotfiles on $(date)"
+git push origin master
+
+echo "Dotfiles backup complete and pushed to GitHub."
