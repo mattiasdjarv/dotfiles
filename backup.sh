@@ -16,12 +16,19 @@ dotfiles=(
 
 # Copy dotfiles to the repository folder
 for file in "${dotfiles[@]}"; do
-  rel_path="${file#$HOME/}" # Remove $HOME prefix for relative path
-  dest="$dotfiles_dir/$rel_path"
-  mkdir -p "$(dirname "$dest")" # Ensure destination directory exists
+  # Extract the base name of the file or folder (no parent directories)
+  base_name="$(basename "$file")"
+
   if [ -e "$file" ]; then
-    cp -r "$file" "$dest/.."
-    echo "Copied $file to $dest"
+    if [ -d "$file" ]; then
+      # If it's a directory, copy only its contents
+      cp -r "$file"/* "$dotfiles_dir/$base_name/"
+      echo "Copied contents of $file to $dotfiles_dir/$base_name"
+    else
+      # If it's a file, just copy it
+      cp "$file" "$dotfiles_dir/$base_name"
+      echo "Copied $file to $dotfiles_dir/$base_name"
+    fi
   else
     echo "Warning: $file not found"
   fi
