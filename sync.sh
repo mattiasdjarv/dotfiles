@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Check for missing packages
+./packages.sh
+
 # Assume script is run from within the dotfiles directory
 dotfiles_dir="$(pwd)"
 
