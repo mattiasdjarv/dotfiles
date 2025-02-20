@@ -21,8 +21,8 @@ dotfiles=(
 # Sync dotfiles back to their original locations
 for file in "${dotfiles[@]}"; do
   src="$dotfiles_dir/$(basename $file)"
-  if [ -f "$src" ] || [ -d "$src" ]; then
-    cp -r "$src" "$file"
+  if [ -e "$src" ]; then
+    cp -r "$src" "$(dirname "$file")"
     echo "Synced $src to $file"
   else
     echo "Warning: $src not found in dotfiles repository"
