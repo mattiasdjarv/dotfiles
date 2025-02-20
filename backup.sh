@@ -16,9 +16,11 @@ dotfiles=(
 
 # Copy dotfiles to the repository folder
 for file in "${dotfiles[@]}"; do
-  if [ -f "$file" ] || [ -d "$file" ]; then
-    dest="$dotfiles_dir/$(basename $file)"
-    cp -r "$file" "$dest"
+  rel_path="${file#$HOME/}" # Remove $HOME prefix for relative path
+  dest="$dotfiles_dir/$rel_path"
+  mkdir -p "$(dirname "$dest")" # Ensure destination directory exists
+  if [ -e "$file" ]; then
+    cp -r "$file" "$dest/.."
     echo "Copied $file to $dest"
   else
     echo "Warning: $file not found"
