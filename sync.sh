@@ -19,6 +19,7 @@ dotfiles=(
   "$HOME/.config/hypr/windowrules.conf"
   "$HOME/.config/nvim" # Full LazyVim configuration
   "$HOME/.config/hyde/themes"
+  "$HOME/.config/waybar/config.jsonc" # waybar config
 )
 
 # Sync dotfiles back to their original locations

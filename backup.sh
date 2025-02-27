@@ -9,8 +9,9 @@ dotfiles=(
   "$HOME/.config/hypr/keybindings.conf"
   "$HOME/.config/hypr/userprefs.conf"
   "$HOME/.config/hypr/windowrules.conf"
-  "$HOME/.config/nvim" # Full LazyVim configuration
-  "$HOME/.config/hyde/themes"
+  "$HOME/.config/nvim"                # Full LazyVim configuration
+  "$HOME/.config/hyde/themes"         # For wallpaper sync
+  "$HOME/.config/waybar/config.jsonc" # Waybar config
 
 )
 
