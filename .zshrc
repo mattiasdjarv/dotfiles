@@ -50,3 +50,9 @@ _fzf_compgen_dir() {
 eval "$(zoxide init zsh)"
 
 alias cd="z"
+
+alias ls='eza' \
+            l='eza -lha --icons=auto --no-user --no-permissions' \
+            ll='eza -lha --icons=auto --sort=name --group-directories-first' \
+            ld='eza -lhD --icons=auto' \
+            lt='eza --icons=auto --tree'
