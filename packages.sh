@@ -4,6 +4,7 @@
 packages=(
   "zoxide"
   "neovim"
+  "posy-improved-cursors"
 )
 
 # Function to check if a package is installed
