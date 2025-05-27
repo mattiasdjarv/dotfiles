@@ -5,6 +5,7 @@ packages=(
   "zoxide"
   "neovim"
   "posy-improved-cursors"
+  "swaylock"
 )
 
 # Function to check if a package is installed
